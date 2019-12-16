@@ -5,8 +5,8 @@ print("明文为：" + Plain_Text)
 f.close()
 
 #对明文进行哈希散列得到文件摘要
-import hashlib
-m = hashlib.md5()
+import hash
+m = hash.md5()
 b = Plain_Text.encode(encoding = 'utf-8')
 m.update(b)
 Plain_Text_md5 = m.hexdigest()
@@ -36,7 +36,7 @@ link_file = Plain_Text + str(digital_signature)
 
 #使用AES算法对其进行对称加密
 import base64
-from Crypto.Cipher import AES
+import AES
 
 '''
 采用AES对称加密算法
